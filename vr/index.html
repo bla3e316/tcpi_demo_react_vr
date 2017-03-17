@@ -1,21 +1,43 @@
 <html>
   <head>
-    <title>DEF_REACT_VR1</title>
+    <title>TCPI React VR</title>
     <style>body { margin: 0; }</style>
+    <meta property="og:title" content="TCPI Project in React VR">
+    <meta property="og:image" content="http://daviseford.com/tcpi-react-vr/static_assets/vr_stock.jpg">
+    <meta property="og:description" content="A React VR-powered visualization of various projects my TCPI team has completed at Boz Allen Hamilton">
   <head>
   <body>
     <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
-    <script src="./client.bundle?platform=vr"></script>
+    <script src="./build/client.bundle.js"></script>
     <script>
       // Initialize the React VR application
       ReactVR.init(
         // When you're ready to deploy your app, update this line to point to
         // your compiled index.bundle.js
-        '../index.vr.bundle?platform=vr&dev=true',
+        './build/index.bundle.js',
         // Attach it to the body tag
         document.body
       );
     </script>
   </body>
+  <!-- Google Analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-55820654-2', 'auto');
+    ga('require', 'linkid', 'linkid.js');
+    ga('send', 'pageview');
+  </script>
+
 </html>
 

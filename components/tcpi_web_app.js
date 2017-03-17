@@ -47,7 +47,7 @@ export default class TCPI_Web_App extends React.Component {
               }}>
                 <Image
                     style={{width: 2, height: 2}}
-                    source={require('../static_assets/tcpi_web_app.png')}
+                    source={{uri: 'http://daviseford.com/tcpi-react-vr/static_assets/tcpi_web_app.png'}}
                 />
               </View>
 

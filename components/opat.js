@@ -44,11 +44,11 @@ export default class OPAT extends React.Component {
               <View style={{flex: 1, flexDirection: 'row'}}>
                 <Image
                     style={{width: 3, height: 2}}
-                    source={require('../static_assets/opat1.png')}
+                    source={{uri: 'http://daviseford.com/tcpi-react-vr/static_assets/opat1.png'}}
                 />
                 <Image
                     style={{width: 3, height: 2,}}
-                    source={require('../static_assets/opat2.png')}
+                    source={{uri: 'http://daviseford.com/tcpi-react-vr/static_assets/opat2.png'}}
                 />
               </View>
 
