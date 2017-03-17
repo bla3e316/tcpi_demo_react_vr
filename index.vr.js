@@ -6,7 +6,7 @@ class DEF_REACT_VR1 extends React.Component {
   render() {
     return (
         <View>
-          <Pano source={asset('desert.jpg')}/>
+          <Pano source={asset('desert-sm.jpg')}/>
           <Project_Container/>
         </View>
     );
