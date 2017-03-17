@@ -1,24 +1,30 @@
 import React from "react";
-import {AppRegistry, asset, StyleSheet, Pano, Text, View} from "react-vr";
+import {AppRegistry, asset, StyleSheet, Pano, Text, View, Image} from "react-vr";
 
 export default class TCPI_Web_App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      gazeEnabled: false
+    };
+  }
+
   render() {
     return (
         <View style={{
-          flex: 1,
-          width:5,
-          flexDirection: 'column',
-          //layoutOrigin: [1.5, 0.3],
+          width: 5,
+          height: 8,
           transform: [
-            {translate: [0, 0, -3]}, {scale: 1},
+            {translate: [-2, 0, -1]}, {scale: 1},
             {rotateY: 0}, {rotateX: 0}
           ],
-          paddingLeft: 0.3,
-          paddingRight: 0.3,
-        }}>
+        }}
+              onEnter={() => this.setState({gazeEnabled: true})}
+              onExit={() => this.setState({gazeEnabled: false})}
+        >
           <Text
               style={{
-                backgroundColor: '#777879',
+                backgroundColor: this.state.gazeEnabled ? 'red' : '#777879',
                 fontSize: 0.6,
                 textAlign: 'center',
                 textAlignVertical: 'center',
@@ -33,6 +39,20 @@ export default class TCPI_Web_App extends React.Component {
               }}>
             Django | React
           </Text>
+
+          {this.state.gazeEnabled ?
+              <View style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+                <Image
+                    style={{width: 2, height: 2}}
+                    source={require('../static_assets/tcpi_web_app.png')}
+                />
+              </View>
+
+              : null}
+
         </View>
     )
   }
